@@ -29,13 +29,13 @@ body {
 #notifications {
     font-size: 8pt;
     position: absolute;
-    top: 24px;
+    top: 28px;
     left: 16px;
     width: 50%;
 }
 
 #uititle {
-    top: 24px;
+    top: 28px;
     left: 10px;
     color: gray;
     font-weight: bold;
