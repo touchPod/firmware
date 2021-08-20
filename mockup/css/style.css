@@ -1,0 +1,51 @@
+body {
+    background: #000;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#buttons {
+    float: right;
+}
+
+#buttons i {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+#ui {
+    float: left;
+}
+
+#clock {
+    font-weight: bold;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+}
+
+#notifications {
+    font-size: 8pt;
+    position: absolute;
+    top: 24px;
+    left: 16px;
+    width: 50%;
+}
+
+#uititle {
+    top: 10px;
+    left: 10px;
+    color: gray;
+    font-weight: bold;
+    position: absolute;
+}
+
+/* #logo img {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 4px;
+    left: 4px;
+} */
