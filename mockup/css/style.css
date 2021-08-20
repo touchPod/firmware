@@ -42,10 +42,12 @@ body {
     position: absolute;
 }
 
-/* #logo img {
+#battery {
     position: absolute;
-    width: 16px;
-    height: 16px;
     top: 4px;
-    left: 4px;
-} */
+    left: 6px;
+}
+
+#battery i {
+    font-size: 12px;
+}
