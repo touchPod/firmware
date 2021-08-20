@@ -12,7 +12,9 @@ $(document).ready(function() {
         $("#clock").html(time);
     }
     updateTime();
-    window.setInterval(updateTime(), 1000);
+    window.setInterval(function() {
+        updateTime();
+    }, 1000);
     $("#home").click(function() {
         screen = "home";
         $("#notifications").hide();
