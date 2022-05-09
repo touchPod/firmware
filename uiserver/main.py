@@ -3,6 +3,7 @@ from bottle import template, run, get, static_file, response
 import os
 import os.path
 import uuid
+import psutil
 
 os.makedirs("db", exist_ok=True)
 if not os.path.exists("db/serial"):
@@ -43,5 +44,24 @@ def serial():
     x = f.read()
     f.close()
     return x
+
+@get("/battery")
+def battery():
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.content_type = "text/plain"
+    battery = psutil.sensors_battery()
+    if not battery.power_plugged:
+        if battery.percent < 15:
+            return "battery-0"
+        if battery.percent >= 15 and battery.percent < 50:
+            return "battery-1"
+        if battery.percent >= 50 and battery.percent < 80:
+            return "battery-2"
+        if battery.percent >= 80 and battery.percent < 99:
+            return "battery-3"
+        if battery.percent >= 99:
+            return "battery-4"
+    else:
+        return "plug"
 
 run(host="localhost", port=5000)

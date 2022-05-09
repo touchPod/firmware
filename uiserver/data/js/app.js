@@ -11,9 +11,16 @@ $(document).ready(function() {
         var time = h + ":" + m;
         $("#clock").html(time);
     }
+    function updateBattery() {
+        $.get("/battery", function(data) {
+            $("#battery").attr("class", "fa fa-"+data);
+        });
+    }
     updateTime();
+    updateBattery();
     window.setInterval(function() {
         updateTime();
+        updateBattery();
     }, 1000);
     $("#home").click(function() {
         screen = "home";

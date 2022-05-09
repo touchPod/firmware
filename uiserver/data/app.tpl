@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <div id="battery"><i class="fa fa-battery-3" aria-hidden="true"></i></div>
+        <div><i class="fa fa-battery-3" id="battery" aria-hidden="true"></i></div>
         <div id="buttons">
             <i class="fa fa-cog" aria-hidden="true" id="settings"></i>
             <i class="fa fa-exclamation" aria-hidden="true" id="action"></i>
@@ -18,6 +18,7 @@
         <div id="ui">
             <div id="notifications"><b style="color:gray;">No new notifications.</b></div>
             <h2 id="clock" onload="showTime()">13:37</h2>
+            <div id="version">v0.1-dev</div>
         </div>
         <div id="settingsui">
             <div id="uititle">Settings</div>

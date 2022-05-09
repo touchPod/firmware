@@ -48,7 +48,7 @@ body {
     left: 6px;
 }
 
-#battery i {
+#battery {
     font-size: 12px;
 }
 
@@ -68,4 +68,10 @@ ul, li {
 .ui-content > ul.menu > li.selected {
     background: #ccc;
     color: #000;
+}
+
+#version {
+    position: absolute;
+    bottom: 6px;
+    font-size: 9pt;
 }
