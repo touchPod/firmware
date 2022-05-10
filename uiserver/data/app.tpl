@@ -36,7 +36,7 @@
         </div>
         <div id="aboutui">
             <div class="uititle">koyu<br>SmartOS</div>
-            <div class="ui-content">
+            <div class="ui-content aboutc">
                 <p>v0.1-dev</p>
                 <p>&copy; koyu.space 2022</p>
             </div>

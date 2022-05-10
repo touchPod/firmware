@@ -64,6 +64,10 @@ body {
     font-size: 8pt;
 }
 
+.aboutc {
+    top: 44px !important;
+}
+
 ul, li {
     padding: 0;
     margin: 0;
