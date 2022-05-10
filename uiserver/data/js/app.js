@@ -72,6 +72,7 @@ $(document).ready(function() {
                 }
             } else {
                 $.get("/unr", function(data){});
+                $("body").html("<div id=\"sstatus\">Updating...</div>")
             }
         }
         if (event.keyCode === 51) {
