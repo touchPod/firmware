@@ -3,6 +3,7 @@ $(document).ready(function() {
     $("#settingsui").hide();
     $("#aboutui").hide();
     $("#connectivityui").hide();
+    $("#flipped").hide();
     var screen = "home";
     function updateTime() {
         var date = new Date();
@@ -25,19 +26,10 @@ $(document).ready(function() {
         updateBattery();
     }, 1000);
     var selection = 0;
+    var flipped = false;
     document.addEventListener('keydown', function(event) {
         if (event.keyCode === 49) {
-            if (screen === "settings") {
-                if (selection === 0) {
-                    $("#settingsui").hide();
-                    $("#connectivityui").show();
-                    screen = "connectivity";
-                } else {
-                    $("#settingsui").hide();
-                    $("#aboutui").show();
-                    screen = "about";
-                }
-            } else {
+            if (!flipped) {
                 $("#ui").hide();
                 $("#settingsui").show();
                 $("#aboutui").hide();
@@ -46,17 +38,48 @@ $(document).ready(function() {
                 $("#connectivity").attr("class", "selected");
                 $("#about").attr("class", "");
                 screen = "settings";
+            } else {
+                $.get("/serial", function(data) {
+                    alert("SN: "+data);
+                });
             }
         }
         if (event.keyCode === 50) {
-            if (screen === "home") {
-                $("#ui").show();
-                $("#clock").hide();
-                $("#notifications").show();
-                screen = "notifications";
+            if (!flipped) {
+                if (screen === "home") {
+                    $("#ui").show();
+                    $("#clock").hide();
+                    $("#notifications").show();
+                    screen = "notifications";
+                }
+                if (screen === "settings") {
+                    if (selection === 0) {
+                        $("#settingsui").hide();
+                        $("#connectivityui").show();
+                        screen = "connectivity";
+                    } else {
+                        $("#settingsui").hide();
+                        $("#aboutui").show();
+                        screen = "about";
+                    }
+                }
+            } else {
+                if (confirm("Update and reboot?")) {
+                    $.get("/unr", function(data){});
+                }
             }
         }
         if (event.keyCode === 51) {
+            if (screen === "home") {
+                flipped = !flipped;
+                if (flipped) {
+                    $("#buttons").hide();
+                    $("#flipped").show();
+                } else {
+                    $("#buttons").show();
+                    $("#flipped").hide();
+                }
+            }
             screen = "home";
             $("#notifications").hide();
             $("#settingsui").hide();

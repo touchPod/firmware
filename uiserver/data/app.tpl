@@ -15,6 +15,11 @@
             <i class="fa fa-exclamation" aria-hidden="true" id="action"></i>
             <i id="logo"><img src="img/logo.svg" height="18" id="home"></i>
         </div>
+        <div id="flipped">
+            <i class="fa fa-tag" aria-hidden="true" id="sn"></i>
+            <i class="fa fa-refresh" aria-hidden="true" id="unr"></i>
+            <i id="logo"><img src="img/logo.svg" height="18" id="home"></i>
+        </div>
         <div id="ui">
             <div id="notifications"><b style="color:gray;">No new notifications.</b></div>
             <h2 id="clock" onload="showTime()">13:37</h2>

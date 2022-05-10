@@ -64,4 +64,11 @@ def battery():
     else:
         return "plug"
 
+@get("/unr")
+def unr():
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.content_type = "text/plain"
+    os.system("/home/pi/unr.sh")
+    return "OK"
+
 run(host="localhost", port=5000)

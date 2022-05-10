@@ -5,11 +5,13 @@ body {
     overflow: hidden;
 }
 
-#buttons {
+#buttons,
+#flipped {
     float: right;
 }
 
-#buttons i {
+#buttons i,
+#flipped i {
     display: block;
     text-align: center;
     margin-top: 15px;
