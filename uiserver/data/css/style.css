@@ -2,6 +2,7 @@ body {
     background: #000;
     color: #fff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
 }
 
 #buttons {
@@ -40,6 +41,7 @@ body {
     color: gray;
     font-weight: bold;
     position: absolute;
+    font-size: 10pt;
 }
 
 #battery {
@@ -57,6 +59,7 @@ body {
     top: 48px;
     left: 10px;
     width: 70%;
+    font-size: 9pt;
 }
 
 ul, li {

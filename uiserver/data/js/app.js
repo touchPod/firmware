@@ -1,6 +1,8 @@
 $(document).ready(function() {
     $("#notifications").hide();
     $("#settingsui").hide();
+    $("#aboutui").hide();
+    $("#connectivityui").hide();
     var screen = "home";
     function updateTime() {
         var date = new Date();
@@ -22,24 +24,57 @@ $(document).ready(function() {
         updateTime();
         updateBattery();
     }, 1000);
-    $("#home").click(function() {
-        screen = "home";
-        $("#notifications").hide();
-        $("#settingsui").hide();
-        $("#clock").show();
-        $("#ui").show();
-    });
-    $("#action").click(function() {
-        if (screen === "home") {
-            $("#ui").show();
-            $("#clock").hide();
-            $("#notifications").show();
-            screen = "notifications";
+    var selection = 0;
+    document.addEventListener('keydown', function(event) {
+        if (event.keyCode === 49) {
+            $("#ui").hide();
+            $("#settingsui").show();
+            $("#aboutui").hide();
+            $("#connectivityui").hide();
+            selection = 0;
+            $("#connectivity").attr("class", "selected");
+            $("#about").attr("class", "");
+            screen = "settings";
         }
-    });
-    $("#settings").click(function() {
-        $("#ui").hide();
-        $("#settingsui").show();
-        screen = "settings";
+        if (event.keyCode === 50) {
+            if (screen === "home") {
+                $("#ui").show();
+                $("#clock").hide();
+                $("#notifications").show();
+                screen = "notifications";
+            }
+        }
+        if (event.keyCode === 51) {
+            screen = "home";
+            $("#notifications").hide();
+            $("#settingsui").hide();
+            $("#aboutui").hide();
+            $("#connectivityui").hide();
+            $("#clock").show();
+            $("#ui").show();
+        }
+        if (event.keyCode === 38) {
+            if (screen === "settings") {
+                selection = 0;
+                $("#connectivity").attr("class", "selected");
+                $("#about").attr("class", "");
+            }
+        }
+        if (event.keyCode === 40) {
+            selection = 1;
+            $("#connectivity").attr("class", "");
+            $("#about").attr("class", "selected");
+        }
+        if (event.keyCode === 13) {
+            if (selection === 0) {
+                $("#settingsui").hide();
+                $("#connectivityui").show();
+                screen = "connectivity";
+            } else {
+                $("#settingsui").hide();
+                $("#aboutui").show();
+                screen = "about";
+            }
+        }
     });
 });

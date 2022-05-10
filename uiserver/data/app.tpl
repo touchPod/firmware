@@ -29,5 +29,19 @@
                 </ul>
             </div>
         </div>
+        <div id="aboutui">
+            <div id="uititle">koyu SmartOS</div>
+            <div class="ui-content">
+                <p>v0.1-dev</p>
+                <p>&copy; koyu.space 2022</p>
+            </div>
+        </div>
+        <div id="connectivityui">
+            <div id="uititle">Connectivity</div>
+            <div class="ui-content">
+                <p>No UI...yet</p>
+                <p><b>TEST TEST TEST TEST TEST</b></p>
+            </div>
+        </div>
     </body>
 </html>
