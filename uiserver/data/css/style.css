@@ -41,7 +41,7 @@ body {
     color: gray;
     font-weight: bold;
     position: absolute;
-    font-size: 10pt;
+    font-size: 9pt;
 }
 
 #battery {
@@ -56,10 +56,10 @@ body {
 
 .ui-content {
     position: absolute;
-    top: 48px;
+    top: 38px;
     left: 10px;
     width: 70%;
-    font-size: 9pt;
+    font-size: 8pt;
 }
 
 ul, li {
@@ -71,6 +71,10 @@ ul, li {
 .ui-content > ul.menu > li.selected {
     background: #ccc;
     color: #000;
+}
+
+.menu {
+    margin-top: 10px;
 }
 
 #version {

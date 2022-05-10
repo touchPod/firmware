@@ -27,14 +27,26 @@ $(document).ready(function() {
     var selection = 0;
     document.addEventListener('keydown', function(event) {
         if (event.keyCode === 49) {
-            $("#ui").hide();
-            $("#settingsui").show();
-            $("#aboutui").hide();
-            $("#connectivityui").hide();
-            selection = 0;
-            $("#connectivity").attr("class", "selected");
-            $("#about").attr("class", "");
-            screen = "settings";
+            if (screen === "settings") {
+                if (selection === 0) {
+                    $("#settingsui").hide();
+                    $("#connectivityui").show();
+                    screen = "connectivity";
+                } else {
+                    $("#settingsui").hide();
+                    $("#aboutui").show();
+                    screen = "about";
+                }
+            } else {
+                $("#ui").hide();
+                $("#settingsui").show();
+                $("#aboutui").hide();
+                $("#connectivityui").hide();
+                selection = 0;
+                $("#connectivity").attr("class", "selected");
+                $("#about").attr("class", "");
+                screen = "settings";
+            }
         }
         if (event.keyCode === 50) {
             if (screen === "home") {
@@ -64,19 +76,6 @@ $(document).ready(function() {
             selection = 1;
             $("#connectivity").attr("class", "");
             $("#about").attr("class", "selected");
-        }
-        if (event.keyCode === 13) {
-            if (screen === "settings") {
-                if (selection === 0) {
-                    $("#settingsui").hide();
-                    $("#connectivityui").show();
-                    screen = "connectivity";
-                } else {
-                    $("#settingsui").hide();
-                    $("#aboutui").show();
-                    screen = "about";
-                }
-            }
         }
     });
 });
