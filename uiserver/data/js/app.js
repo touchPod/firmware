@@ -66,14 +66,16 @@ $(document).ready(function() {
             $("#about").attr("class", "selected");
         }
         if (event.keyCode === 13) {
-            if (selection === 0) {
-                $("#settingsui").hide();
-                $("#connectivityui").show();
-                screen = "connectivity";
-            } else {
-                $("#settingsui").hide();
-                $("#aboutui").show();
-                screen = "about";
+            if (screen === "settings") {
+                if (selection === 0) {
+                    $("#settingsui").hide();
+                    $("#connectivityui").show();
+                    screen = "connectivity";
+                } else {
+                    $("#settingsui").hide();
+                    $("#aboutui").show();
+                    screen = "about";
+                }
             }
         }
     });
