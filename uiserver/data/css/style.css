@@ -37,7 +37,7 @@ body {
     width: 50%;
 }
 
-#uititle {
+.uititle {
     top: 28px;
     left: 10px;
     color: gray;
@@ -83,4 +83,11 @@ ul, li {
     position: absolute;
     bottom: 6px;
     font-size: 9pt;
+}
+
+#snt {
+    font-size: 8pt;
+    font-family: monospace;
+    width: 80px;
+    word-wrap: anywhere;
 }

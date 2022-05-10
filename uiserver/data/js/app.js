@@ -4,6 +4,7 @@ $(document).ready(function() {
     $("#aboutui").hide();
     $("#connectivityui").hide();
     $("#flipped").hide();
+    $("#snui").hide();
     var screen = "home";
     function updateTime() {
         var date = new Date();
@@ -39,8 +40,14 @@ $(document).ready(function() {
                 $("#about").attr("class", "");
                 screen = "settings";
             } else {
+                screen = "snui";
+                $("#ui").hide();
+                $("#settingsui").hide();
+                $("#aboutui").hide();
+                $("#connectivityui").hide();
                 $.get("/serial", function(data) {
-                    alert("SN: "+data);
+                    $("#snt").html(data);
+                    $("#snui").show();
                 });
             }
         }
@@ -64,9 +71,7 @@ $(document).ready(function() {
                     }
                 }
             } else {
-                if (confirm("Update and reboot?")) {
-                    $.get("/unr", function(data){});
-                }
+                $.get("/unr", function(data){});
             }
         }
         if (event.keyCode === 51) {
@@ -85,6 +90,7 @@ $(document).ready(function() {
             $("#settingsui").hide();
             $("#aboutui").hide();
             $("#connectivityui").hide();
+            $("#snui").hide();
             $("#clock").show();
             $("#ui").show();
         }

@@ -26,7 +26,7 @@
             <div id="version">v0.1-dev</div>
         </div>
         <div id="settingsui">
-            <div id="uititle">Settings</div>
+            <div class="uititle">Settings</div>
             <div class="ui-content">
                 <ul class="menu">
                     <li id="connectivity" class="selected">Connectivity</li>
@@ -35,17 +35,23 @@
             </div>
         </div>
         <div id="aboutui">
-            <div id="uititle">koyu SmartOS</div>
+            <div class="uititle">koyu SmartOS</div>
             <div class="ui-content">
                 <p>v0.1-dev</p>
                 <p>&copy; koyu.space 2022</p>
             </div>
         </div>
         <div id="connectivityui">
-            <div id="uititle">Connectivity</div>
+            <div class="uititle">Connectivity</div>
             <div class="ui-content">
                 <p>No UI...yet</p>
                 <p><b>TEST TEST TEST TEST TEST</b></p>
+            </div>
+        </div>
+        <div id="snui">
+            <div class="uititle">SN</div>
+            <div class="ui-content">
+                <p id="snt"></p>
             </div>
         </div>
     </body>
