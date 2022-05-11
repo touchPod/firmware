@@ -16,7 +16,7 @@
             <i id="logo"><img src="img/logo.svg" height="18" id="home"></i>
         </div>
         <div id="flipped">
-            <i class="fa fa-tag" aria-hidden="true" id="sn"></i>
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
             <i class="fa fa-refresh" aria-hidden="true" id="unr"></i>
             <i id="logo"><img src="img/logo.svg" height="18" id="home"></i>
         </div>
@@ -37,7 +37,7 @@
         <div id="aboutui">
             <div class="uititle">koyu<br>SmartOS</div>
             <div class="ui-content aboutc">
-                <p>v0.1-dev<br>Build 34</p>
+                <p>v0.1-dev<br>Build 35</p>
                 <p>&copy; koyu.space 2022</p>
             </div>
         </div>
@@ -45,12 +45,6 @@
             <div class="uititle">WiFi</div>
             <div class="ui-content">
                 <ul class="menu" id="networks"></ul>
-            </div>
-        </div>
-        <div id="snui">
-            <div class="uititle">Serial no.</div>
-            <div class="ui-content">
-                <p id="snt"></p>
             </div>
         </div>
         <div id="updateui">

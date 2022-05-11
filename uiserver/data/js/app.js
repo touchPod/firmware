@@ -5,7 +5,6 @@ $(document).ready(function() {
         $("#settingsui").hide();
         $("#aboutui").hide();
         $("#connectivityui").hide();
-        $("#snui").hide();
         $("#updateui").hide();
         $("#ui").hide();
         $("#clock").hide();
@@ -55,15 +54,10 @@ $(document).ready(function() {
                 $("#about").attr("class", "");
                 screen = "settings";
             } else {
-                screen = "snui";
-                hideall();
-                $.get("/serial", function(data) {
-                    $("#snt").html(data);
-                    $("#snui").show();
-                });
+                $("/timezone", function(data){});
             }
         }
-        if (event.keyCode === 50) {
+        if (event.keyCode === 13) {
             if (!flipped) {
                 if (screen === "home") {
                     $("#ui").show();
