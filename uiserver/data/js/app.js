@@ -66,6 +66,17 @@ $(document).ready(function() {
                     if (selection === 0) {
                         $("#settingsui").hide();
                         $("#connectivityui").show();
+                        $.get("/networks", function(data) {
+                            var nn = 0;
+                            $("#networks").html("");
+                            data.forEach(element => {
+                                $("#networks").append("<li><i class=\"fa fa-wifi\" aria-hidden=\"true\"></i> "+element+"</li>");
+                                nn+=1;
+                            });
+                            if (nn === 0) {
+                                $("#networks").html("<li>No networks found.</li>")
+                            }
+                        });
                         screen = "connectivity";
                     } else {
                         $("#settingsui").hide();

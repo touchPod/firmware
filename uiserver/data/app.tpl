@@ -29,7 +29,7 @@
             <div class="uititle">Settings</div>
             <div class="ui-content">
                 <ul class="menu">
-                    <li id="connectivity" class="selected">Connectivity</li>
+                    <li id="connectivity" class="selected">WiFi</li>
                     <li id="about">About</li>
                 </ul>
             </div>
@@ -42,10 +42,9 @@
             </div>
         </div>
         <div id="connectivityui">
-            <div class="uititle">Connectivity</div>
+            <div class="uititle">WiFi</div>
             <div class="ui-content">
-                <p>No UI...yet</p>
-                <p><b>TEST TEST TEST TEST TEST</b></p>
+                <ul class="menu" id="networks"></ul>
             </div>
         </div>
         <div id="snui">

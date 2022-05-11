@@ -1,9 +1,27 @@
 #!/usr/bin/python3
-from bottle import template, run, get, static_file, response
-import os
-import os.path
-import uuid
-import psutil
+try:
+    from bottle import template, run, get, static_file, response
+    import os
+    import os.path
+    import uuid
+    import psutil
+    from wifi import Cell, Scheme
+    import json
+except:
+    import os
+    import sys
+    import psutil
+    os.system("pip3 install -r requirements.txt")
+    python = sys.executable
+    os.execl(python, python, "{}".format(sys.argv[0]))
+
+def getwificard():
+    addrs = psutil.net_if_addrs()
+    cards = []
+    for key in addrs.keys():
+        if key.startswith("wl"):
+            cards.append(key)
+    return list(dict.fromkeys(cards))[0]
 
 os.makedirs("db", exist_ok=True)
 if not os.path.exists("db/serial"):
@@ -70,5 +88,19 @@ def unr():
     response.content_type = "text/plain"
     os.system("/home/pi/unr.sh")
     return "OK"
+
+@get("/networks")
+def networks():
+    try:
+        response.headers['Access-Control-Allow-Origin'] = '*'
+        response.content_type = "text/json"
+        cells = Cell.all(getwificard())
+        networks = []
+        for cell in cells:
+            networks.append(cell.ssid)
+        networks = list(dict.fromkeys(networks))
+        return json.dumps(networks)
+    except:
+        return json.dumps([])
 
 run(host="localhost", port=5000)
