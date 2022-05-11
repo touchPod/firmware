@@ -98,7 +98,7 @@ $(document).ready(function() {
                 screen = "update";
             }
         }
-        if (event.keyCode === 51) {
+        if (event.keyCode === 13) {
             if (screen === "home") {
                 flipped = !flipped;
                 if (flipped) {
