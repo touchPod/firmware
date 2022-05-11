@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-from sqlite3 import Timestamp
-
-
 try:
     from bottle import template, run, get, static_file, response
     import os
     import os.path
+    import subprocess
     import uuid
     import psutil
     from wifi import Cell, Scheme
@@ -128,7 +126,11 @@ def timezone():
         f.close()
     except:
         pass
-    os.system("chmod +x /home/pi/feldberg/runtzdata.sh && /home/pi/feldberg/runtzdata.sh")
+    try:
+        subprocess.popen("chmod +x /home/pi/feldberg/runtzdata.sh", shell=True).wait()
+        subprocess.popen("/home/pi/feldberg/runtzdata.sh", shell=True)
+    except:
+        pass
     return "OK"
 
 run(host="localhost", port=5000)
