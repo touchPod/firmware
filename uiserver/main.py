@@ -88,6 +88,7 @@ def battery():
 def unr():
     response.headers['Access-Control-Allow-Origin'] = '*'
     response.content_type = "text/plain"
+    os.system("cd /home/pi/feldberg && git checkout -- .")
     os.system("/home/pi/unr.sh")
     return "OK"
 
@@ -127,8 +128,8 @@ def timezone():
     except:
         pass
     try:
-        subprocess.popen("chmod +x /home/pi/feldberg/runtzdata.sh", shell=True).wait()
-        subprocess.popen("/home/pi/feldberg/runtzdata.sh", shell=True)
+        os.system("chmod +x /home/pi/feldberg/runtzdata.sh", shell=True).wait()
+        os.system("/home/pi/feldberg/runtzdata.sh", shell=True)
     except:
         pass
     return "OK"
