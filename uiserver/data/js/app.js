@@ -57,7 +57,7 @@ $(document).ready(function() {
                 $("/timezone", function(data){});
             }
         }
-        if (event.keyCode === 13) {
+        if (event.keyCode === 50) {
             if (!flipped) {
                 if (screen === "home") {
                     $("#ui").show();
