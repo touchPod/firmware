@@ -49,9 +49,15 @@
             </div>
         </div>
         <div id="snui">
-            <div class="uititle">SN</div>
+            <div class="uititle">Serial no.</div>
             <div class="ui-content">
                 <p id="snt"></p>
+            </div>
+        </div>
+        <div id="updateui">
+             <div class="uititle">Updater</div>
+            <div class="ui-content">
+                <p>Press again to update and reboot the system...</p>
             </div>
         </div>
     </body>

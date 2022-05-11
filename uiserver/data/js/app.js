@@ -1,10 +1,18 @@
 $(document).ready(function() {
-    $("#notifications").hide();
-    $("#settingsui").hide();
-    $("#aboutui").hide();
-    $("#connectivityui").hide();
     $("#flipped").hide();
-    $("#snui").hide();
+    function hideall() {
+        $("#notifications").hide();
+        $("#settingsui").hide();
+        $("#aboutui").hide();
+        $("#connectivityui").hide();
+        $("#snui").hide();
+        $("#updateui").hide();
+        $("#ui").hide();
+        $("#clock").hide();
+    }
+    hideall();
+    $("#ui").show();
+    $("#clock").show();
     var screen = "home";
     function updateTime() {
         var date = new Date();
@@ -31,20 +39,15 @@ $(document).ready(function() {
     document.addEventListener('keydown', function(event) {
         if (event.keyCode === 49) {
             if (!flipped) {
-                $("#ui").hide();
+                hideall();
                 $("#settingsui").show();
-                $("#aboutui").hide();
-                $("#connectivityui").hide();
                 selection = 0;
                 $("#connectivity").attr("class", "selected");
                 $("#about").attr("class", "");
                 screen = "settings";
             } else {
                 screen = "snui";
-                $("#ui").hide();
-                $("#settingsui").hide();
-                $("#aboutui").hide();
-                $("#connectivityui").hide();
+                hideall();
                 $.get("/serial", function(data) {
                     $("#snt").html(data);
                     $("#snui").show();
@@ -71,8 +74,13 @@ $(document).ready(function() {
                     }
                 }
             } else {
-                $.get("/unr", function(data){});
-                $("body").html("<div id=\"sstatus\">Updating...</div>")
+                if (screen === "update") {
+                    $.get("/unr", function(data){});
+                    $("body").html("<div id=\"sstatus\">Updating...</div>");
+                }
+                hideall();
+                $("#updateui").show();
+                screen = "update";
             }
         }
         if (event.keyCode === 51) {
@@ -87,11 +95,7 @@ $(document).ready(function() {
                 }
             }
             screen = "home";
-            $("#notifications").hide();
-            $("#settingsui").hide();
-            $("#aboutui").hide();
-            $("#connectivityui").hide();
-            $("#snui").hide();
+            hideall();
             $("#clock").show();
             $("#ui").show();
         }
