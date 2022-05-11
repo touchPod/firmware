@@ -128,7 +128,11 @@ def timezone():
         f.close()
     except:
         pass
-    os.system("killall surf\nlxterminal -e \"sudo dpkg-reconfigure tzdata\"\nsurf http://localhost:5000 &!")
+    try:
+        os.system("chmod +x /home/pi/feldberg/runtzdata.sh")
+        os.system("/home/pi/feldberg/runtzdata.sh")
+    except:
+        pass
     return "OK"
 
 run(host="localhost", port=5000)
