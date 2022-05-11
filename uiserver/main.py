@@ -118,14 +118,17 @@ def date():
 def timezone():
     response.headers['Access-Control-Allow-Origin'] = '*'
     response.content_type = "text/plain"
-    f = open("/home/pi/.config/lxterminal/lxterminal.conf", "r")
-    s = f.read()
-    s = s.replace("Monospace 10", "Monospace 4")
-    f.close()
-    f = open("/home/pi/.config/lxterminal/lxterminal.conf", "w")
-    f.write(s)
-    f.close()
-    os.system("killall surf && lxterminal -e sudo dpkg-reconfigure tzdata && surf http://localhost:5000 &!")
+    try:
+        f = open("/home/pi/.config/lxterminal/lxterminal.conf", "r")
+        s = f.read()
+        s = s.replace("Monospace 10", "Monospace 4")
+        f.close()
+        f = open("/home/pi/.config/lxterminal/lxterminal.conf", "w")
+        f.write(s)
+        f.close()
+    except:
+        pass
+    os.system("killall surf && lxterminal -e \"sudo dpkg-reconfigure tzdata\" && surf http://localhost:5000 &!")
     return "OK"
 
 run(host="localhost", port=5000)
