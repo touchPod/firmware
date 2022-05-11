@@ -57,7 +57,7 @@
         <div id="updateui">
              <div class="uititle">Updater</div>
             <div class="ui-content">
-                <p>Press again to update and reboot the system. Press <img src="img/logo.svg" height="11" style="vertical-align:middle;margin-top:-4px;"> to abort.</p>
+                <p>Press again to update and reboot the system. Press <img src="img/logo.svg" height="11" style="vertical-align:middle;margin-top:-6px;"> to abort.</p>
             </div>
         </div>
     </body>
