@@ -24,7 +24,6 @@
             <div id="notifications"><b style="color:gray;">No new notifications.</b></div>
             <h2 id="clock">13:37</h2>
             <div id="date">04-20-69</div>
-            <div id="version">v0.1-dev</div>
         </div>
         <div id="settingsui">
             <div class="uititle">Settings</div>
