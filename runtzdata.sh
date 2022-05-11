@@ -1,5 +1,5 @@
 #!/bin/bash
 feh --bg-scale /home/pi/feldberg/bootsplash.png &
 killall surf
-lxterminal -e "/home/pi/feldberg/tzdata.sh"
+lxterminal -e "sudo dpkg-reconfigure tzdata" && /home/pi/init.sh
 feh --bg-scale /home/pi/feldberg/crash.png &
