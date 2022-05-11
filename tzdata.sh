@@ -1,3 +1,2 @@
 #!/bin/bash
-sudo dpkg-reconfigure tzdata
-surf http://localhost:5000
+sudo dpkg-reconfigure tzdata && /home/pi/init.sh
