@@ -128,7 +128,7 @@ def timezone():
         f.close()
     except:
         pass
-    os.system("killall surf && lxterminal -e \"sudo dpkg-reconfigure tzdata\" && surf http://localhost:5000 &!")
+    os.system("killall surf\nlxterminal -e \"sudo dpkg-reconfigure tzdata\"\nsurf http://localhost:5000 &!")
     return "OK"
 
 run(host="localhost", port=5000)
