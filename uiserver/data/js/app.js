@@ -54,7 +54,7 @@ $(document).ready(function() {
                 $("#about").attr("class", "");
                 screen = "settings";
             } else {
-                $("/timezone", function(data){});
+                $.get("/timezone", function(data){});
             }
         }
         if (event.keyCode === 50) {
