@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+from sqlite3 import Timestamp
+
+
 try:
     from bottle import template, run, get, static_file, response
     import os
@@ -7,6 +10,7 @@ try:
     import psutil
     from wifi import Cell, Scheme
     import json
+    from datetime import datetime
 except:
     import os
     import sys
@@ -102,5 +106,12 @@ def networks():
         return json.dumps(networks)
     except:
         return json.dumps([])
+
+@get("/date")
+def date():
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.content_type = "text/plain"
+    today = datetime.now()
+    return today.strftime("%m-%d-%y")
 
 run(host="localhost", port=5000)

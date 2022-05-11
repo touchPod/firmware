@@ -29,6 +29,13 @@ body {
     left: 24px;
 }
 
+#date {
+    font-size: 8pt;
+    position: absolute;
+    top: 78px;
+    left: 35px;
+}
+
 #notifications {
     font-size: 8pt;
     position: absolute;

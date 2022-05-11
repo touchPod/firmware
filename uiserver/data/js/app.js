@@ -9,10 +9,12 @@ $(document).ready(function() {
         $("#updateui").hide();
         $("#ui").hide();
         $("#clock").hide();
+        $("#date").hide();
     }
     hideall();
     $("#ui").show();
     $("#clock").show();
+    $("#date").show();
     var screen = "home";
     function updateTime() {
         var date = new Date();
@@ -23,15 +25,22 @@ $(document).ready(function() {
         var time = h + ":" + m;
         $("#clock").html(time);
     }
+    function updateDate() {
+        $.get("/date", function(data) {
+            $("#date").html(data);
+        });
+    }
     function updateBattery() {
         $.get("/battery", function(data) {
             $("#battery").attr("class", "fa fa-"+data);
         });
     }
     updateTime();
+    updateDate();
     updateBattery();
     window.setInterval(function() {
         updateTime();
+        updateDate();
         updateBattery();
     }, 1000);
     var selection = 0;
@@ -59,6 +68,7 @@ $(document).ready(function() {
                 if (screen === "home") {
                     $("#ui").show();
                     $("#clock").hide();
+                    $("#date").hide();
                     $("#notifications").show();
                     screen = "notifications";
                 }
@@ -108,6 +118,7 @@ $(document).ready(function() {
             screen = "home";
             hideall();
             $("#clock").show();
+            $("#date").show();
             $("#ui").show();
         }
         if (event.keyCode === 38) {
