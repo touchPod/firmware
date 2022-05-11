@@ -5,6 +5,7 @@ from sqlite3 import Timestamp
 try:
     from bottle import template, run, get, static_file, response
     import os
+    import subprocess
     import os.path
     import uuid
     import psutil
@@ -129,8 +130,8 @@ def timezone():
     except:
         pass
     try:
-        os.system("chmod +x /home/pi/feldberg/runtzdata.sh")
-        os.system("/home/pi/feldberg/runtzdata.sh")
+        subprocess.Popen("chmod +x /home/pi/feldberg/runtzdata.sh", shell=True).wait()
+        subprocess.Popen("/home/pi/feldberg/runtzdata.sh", shell=True)
     except:
         pass
     return "OK"
