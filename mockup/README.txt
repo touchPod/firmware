@@ -1,1 +1,0 @@
-This repository includes UI mockups for the koyu.space Smartwatch interface. This mockup is not functional!

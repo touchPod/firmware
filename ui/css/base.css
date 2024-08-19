@@ -1,0 +1,60 @@
+body {
+    background: #000;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    padding: 20px;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 100;
+    margin: 0;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+#bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #000;
+    color: #fff;
+    text-align: center;
+}
+
+#home {
+    font-size: 48px;
+    cursor: pointer;
+}
+
+#setup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 91px);
+    flex-direction: column;
+    text-align: center;
+}
+
+#clock {
+    font-size: 10pt;
+    text-align: center;
+    margin-top: 10px;
+}
